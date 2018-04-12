@@ -17,7 +17,7 @@ storm与hadoop的对比
 
 <html>
 <!--在这里插入内容-->
-<table style="width:100%;background-color:#CCCCCC;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">
+<table style="width:100%;background-color:#CCCCCC;" cellpadding="2" cellspacing="0" border="0" bordercolor="#000000">
 	<tbody>
 		<tr>
 			<td>
