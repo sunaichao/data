@@ -96,5 +96,6 @@ storm与hadoop的对比
 - **Topology**：storm中运行的一个实时应用程序，因为各个组件间的消息流动形成逻辑上的一个拓扑结构。
 - **Spout**：在一个topology中产生源数据流的组件。通常情况下spout会从外部数据源中读取数据，然后转换为topology内部的源数据。Spout是一个主动的角色，其接口中有个nextTuple()函数，storm框架会不停地调用此函数，用户只要在其中生成源数据即可。
 - **Bolt**：在一个topology中接受数据然后执行处理的组件。Bolt可以执行过滤，函数操作、合并、写数据库等任何操作。Bolt是一个被动的角色，其接口中有个execute（Tupleinput）函数，在接收到消息后会调用此函数，用户可以在其中执行自己想要的操作。
-
+- **Tuple**：一次消息传递的基本单元。本来应该是一个key-value的map，但是由于各个组件间传递的tuple的字段名称已经事先定义好，所以tuple中只要按序填入各个value就行了，所以就是一个value list。
+- **Stream**：源源不断传递的tuple就组成了stream。
 ---
