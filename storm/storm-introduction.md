@@ -7,7 +7,7 @@
 - [x] ZeroMQ是内部消息系统。
 - [x] JZMQ是ZeroMQMQ的JavaBinding。
 
-==有个名为storm-deploy的子项目，可以在AWS上一键部署Storm集群。==
+‘有个名为storm-deploy的子项目，可以在AWS上一键部署Storm集群。’
 
 ---
 
@@ -121,10 +121,17 @@ storm与hadoop的对比
 ### 数据流分组
 Storm定义了七种内置数据流分组的方式：
 - [x] Shuffle grouping【随机分组】
+- 随机分发tuple给bolt的各个task，每个bolt实例接收到的相同数量的tuple。
 - [x] Fields grouping【按字段分组】
+- 根据指定字段的值进行分组。
 - [x] All grouping【全复制分组】
+- 将所有的tuple复制后分发给所有bolt task。
 - [x] Globle grouping【全局分组】
+- 将所有的tuples路由到唯一一个 task上。
 - [x] None grouping【不分组】
+- 在功能上和随机分组相同，是为将来预留的。
 - [x] Direct grouping【指向型分组】
+- 数据源会调用emitDirect()方法来判断一个tuple应该由哪个storm组件来接收。只能在声明了是指向型的数据流上使用。
 - [x] Local or shuffle grouping【本地或随机分组】
+- 会将tuple分发给同一个worker内的bolt task。
 
